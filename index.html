@@ -3,39 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Thameem — BE Student (Class of 2027) | Web & C++ Dev</title>
-  <meta name="description" content="Thameem - 3rd year BE student at Easwari Engineering College. Projects: Bank Account System, Personal Portfolio, Adobe Hackathon."/>
+  <title>A. Thameem — Student Portfolio</title>
+  <meta name="description" content="Portfolio of A. Thameem — BE Student, Easwari Engineering College. Projects: Banking System, Portfolio Website, Certifications."/>
   <style>
-    :root{
-      --bg:#0f1724; /* dark navy */
-      --card:#0b1220;
-      --accent:#00a3ff; /* bright cyan */
-      --muted:#9aa6b2;
-      --glass: rgba(255,255,255,0.03);
-      --radius:12px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071023);color:#e6eef6}
-    .wrap{max-width:980px;margin:32px auto;padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-    header{display:flex;gap:18px;align-items:center}
-    .avatar{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#6de0ff);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:#042033}
-    h1{margin:0;font-size:26px}
-    .muted{color:var(--muted);font-size:14px}
-    .sub{color:#cdeeff;margin-top:6px}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:20px}
-    @media(max-width:880px){.grid{grid-template-columns:1fr}}
-    .card{padding:18px;border-radius:var(--radius);background:var(--card);box-shadow:0 4px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
-    .project{margin-bottom:18px}
-    .muted-sm{color:var(--muted);font-size:13px}
-    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .tag{background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.02);font-size:13px;color:#dbeffd}
-    .screenshot{width:100%;height:160px;border-radius:8px;object-fit:cover;border:1px solid rgba(255,255,255,0.03);background:#071026;display:block}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#6de0ff);color:#042033;text-decoration:none;font-weight:600}
-    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
-    a.link{color:var(--accent);text-decoration:none}
-    .mini{font-size:13px;color:var(--muted)}
-    .two-col{display:flex;gap:12px;flex-wrap:wrap}
-    .pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);font-size:13px}
+    body{font-family:Inter,system-ui,Arial;background:#071023;color:#e6eef6;line-height:1.6;margin:0}
+    .wrap{max-width:980px;margin:28px auto;padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    header{display:flex;gap:14px;align-items:center}
+    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,#00a3ff,#6de0ff);display:flex;align-items:center;justify-content:center;color:#042033;font-weight:700;font-size:26px}
+    h1{margin:0;font-size:24px}
+    .muted{color:#9aa6b2;font-size:14px}
+    .card{background:#0b1220;padding:16px;border-radius:10px;margin-top:16px;border:1px solid rgba(255,255,255,0.05)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,#00a3ff,#6de0ff);color:#042033;text-decoration:none;font-weight:600}
+    .screenshot{width:100%;height:180px;object-fit:cover;border-radius:8px;background:#0a1726;border:1px solid rgba(255,255,255,0.05)}
+    footer{margin-top:24px;text-align:center;color:#9aa6b2;font-size:13px}
+    a{color:#00a3ff;text-decoration:none}
+    h2{margin-top:0}
+    .project{margin-top:20px}
   </style>
 </head>
 <body>
@@ -44,98 +27,69 @@
       <div class="avatar">TA</div>
       <div>
         <h1>A. Thameem</h1>
-        <div class="sub">3rd Year BE — Easwari Engineering College (Expected 2027) • Web & C++ Dev</div>
-        <div class="muted">📧 <a class="link" href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a> • 📱 +91-6379009154 • <a class="link" href="https://github.com/Thameem1505" target="_blank">GitHub</a></div>
-        <div style="margin-top:8px" class="mini">Seeking internships in Software Development, Web Development, and Embedded Systems. Available Summer 2025/2026.</div>
+        <div class="muted">3rd Year BE — Easwari Engineering College • Class of 2027</div>
+        <div class="muted">📧 <a href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a> • 🌐 <a href="https://github.com/Thameem1505" target="_blank">GitHub</a></div>
       </div>
     </header>
 
-    <div class="grid">
-      <main>
-        <section class="card">
-          <h2 style="margin-top:0">About</h2>
-          <p class="muted-sm">Third-year engineering student with hands-on experience in C++, Python and HTML. I build practical projects (web pages, console apps) and enjoy teamwork and rapid prototyping. I focus on learning clean code and basic software architecture.</p>
-          <div style="margin-top:12px" class="two-col">
-            <div class="pill">Class of 2027</div>
-            <div class="pill">Easwari Engineering College</div>
-            <div class="pill">Open to Internships (India/GCC)</div>
-          </div>
-        </section>
+    <section class="card">
+      <h2>About</h2>
+      <p>I am a third-year BE student passionate about software development, web design, and programming in C++ and Python. I enjoy learning by building small, functional projects that strengthen my technical and problem-solving skills.</p>
+      <p>This site highlights my key projects and certifications.</p>
+    </section>
 
-        <section class="card" style="margin-top:14px">
-          <h2>Selected Projects</h2>
+    <section class="card">
+      <h2>Selected Projects</h2>
 
-          <div class="project">
-  <h3 style="margin:6px 0">Bank Account Management System</h3>
-  <div class="muted-sm">C++ • OOP • File I/O</div>
-  <p class="muted-sm">
-    A mini banking system that supports creating accounts, deposits, withdrawals, and viewing balances.
-    The demo runs completely in the browser for easy testing.
-  </p>
-  <p style="margin-top:8px">
-    <a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a>
-  </p>
-  <img src="assets/project-banking.png" alt="Banking app screenshot" class="screenshot">
-</div>
+      <div class="project">
+        <h3>Bank Account Management System</h3>
+        <p class="muted">C++ • OOP • File I/O</p>
+        <p>This mini project simulates basic banking operations such as creating accounts, deposits, withdrawals, and checking balances. The demo runs directly in the browser for practice and demonstration.</p>
+        <p>
+          <a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a>
+        </p>
+        <img src="assets/project-banking.png" alt="Banking system screenshot" class="screenshot">
+      </div>
 
+      <div class="project">
+        <h3>Personal Portfolio Website</h3>
+        <p class="muted">HTML5 • Responsive • GitHub Pages</p>
+        <p>Designed and developed a personal website using HTML5 and CSS for responsive layout. Hosted on GitHub Pages to showcase projects and certifications online.</p>
+        <p>
+          <a class="btn" href="portfolio.html" target="_blank" rel="noopener">View Portfolio Page</a>
+        </p>
+        <img src="assets/project-portfolio.png" alt="Portfolio screenshot" class="screenshot">
+      </div>
+    </section>
 
-          <div class="project">
-  <h3 style="margin:6px 0">Personal Portfolio Website</h3>
-  <div class="muted-sm">HTML5 • Responsive • GitHub Pages</div>
-  <p class="muted-sm">A one-page portfolio that demonstrates semantic HTML, responsive layout, and downloadable resume link.</p>
-  <p style="margin-top:8px">
-    <a class="btn" href="portfolio.html" target="_blank" rel="noopener">Open Portfolio Page</a>
-    &nbsp;
-    <a class="btn" href="Thameem_Resume.pdf" target="_blank" rel="noopener" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cfefff">Download CV</a>
-  </p>
-  <img src="assets/project-portfolio.png" alt="Portfolio screenshot placeholder" class="screenshot">
-</div>
+    <section class="card">
+      <h2>Certifications</h2>
+      <ul>
+        <li><strong>Adobe Hackathon — Team Project</strong> (Certificate of Participation)
+          <br><span class="muted">Gained experience in collaboration, ideation, and rapid prototyping under time constraints.</span>
+        </li>
+        <li>Generative AI for All — Infosys Springboard</li>
+        <li>Advanced C++ Programming — Certificate</li>
+        <li>HTML Web Development — Certificate</li>
+      </ul>
+    </section>
 
+    <section class="card">
+      <h2>Skills</h2>
+      <p class="muted">C++ • Python • Java • HTML5 • CSS • SQL • MS Office</p>
+    </section>
 
-          <div class="project">
-            <h3 style="margin:6px 0">Adobe Hackathon — Team Project</h3>
-            <div class="muted-sm">Ideation • Prototyping</div>
-            <p class="muted-sm">Worked in a team to prototype an idea under time constraints; gained experience in collaboration and rapid MVP development.</p>
-            <img src="assets/project-hackathon.png" alt="Hackathon screenshot placeholder" class="screenshot">
-          </div>
-        </section>
+    <section class="card">
+      <h2>Resume & Contact</h2>
+      <p>
+        <a class="btn" href="Thameem_Resume.pdf" target="_blank">Download Resume</a>
+      </p>
+      <p class="muted">For internship or project opportunities, please email <a href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a>.</p>
+    </section>
 
-        <section class="card" style="margin-top:14px">
-          <h2>Certifications & Learning</h2>
-          <ul class="muted-sm">
-            <li>Generative AI for All — Infosys Springboard</li>
-            <li>Advanced C++ Programming — Training</li>
-            <li>HTML Web Development — Course</li>
-            <li>Adobe Hackathon — Participation</li>
-          </ul>
-        </section>
-      </main>
-
-      <aside>
-        <div class="card">
-          <h3 style="margin-top:0">Skills</h3>
-          <div class="skills">
-            <div class="tag">C++</div><div class="tag">Python</div><div class="tag">Java</div><div class="tag">HTML5</div><div class="tag">CSS</div><div class="tag">SQL</div><div class="tag">MS Office</div>
-          </div>
-
-          <h3 style="margin-top:14px">Education</h3>
-          <p class="muted-sm"><strong>B.E.</strong> — Easwari Engineering College (Expected June 2027)</p>
-
-          <h3 style="margin-top:14px">Quick Links</h3>
-          <p style="margin-top:6px"><a class="btn" href="Thameem_Resume.pdf" target="_blank">Download CV</a></p>
-          <p class="mini" style="margin-top:8px"><a class="link" href="#" target="_blank">GitHub Repo (coming soon)</a></p>
-        </div>
-
-        <div class="card" style="margin-top:12px">
-          <h3 style="margin-top:0">Contact</h3>
-          <p class="muted-sm">For internships or project collaborations, email: <a class="link" href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a></p>
-        </div>
-      </aside>
-    </div>
-
-    <footer>
-      <div class="mini">Tip: Host this site on <a class="link" href="https://pages.github.com/" target="_blank">GitHub Pages</a> or <a class="link" href="https://www.netlify.com/" target="_blank">Netlify</a> — both are free for static sites.</div>
-    </footer>
+    <footer>© <span id="year"></span> A. Thameem — Portfolio</footer>
   </div>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
