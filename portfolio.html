@@ -7,15 +7,9 @@
   <meta name="description" content="Detailed projects and certifications of A. Thameem — BE Student, Easwari Engineering College."/>
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#101a2f;
-      --text:#e6eef6;
-      --muted:#9aa6b2;
-      --accent:#00a3ff;
-      --accent-2:#6de0ff;
-      --border:rgba(255,255,255,0.08);
-      --radius:12px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --bg:#0b1220; --card:#101a2f; --text:#e6eef6; --muted:#9aa6b2;
+      --accent:#00a3ff; --accent-2:#6de0ff; --border:rgba(255,255,255,0.08); --radius:12px;
+      font-family: Inter,system-ui,Arial;
     }
     html,body{height:100%;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
     .wrap{max-width:960px;margin:28px auto;padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);opacity:0;transition:opacity 0.5s ease;}
@@ -32,7 +26,11 @@
     a{color:var(--accent);text-decoration:none}
     h2{margin-top:0}
     .project{margin-top:20px}
-    ul{padding-left:18px}
+    .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .cert-card{background:#071026;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:10px;align-items:center}
+    .cert-thumb{width:98px;height:70px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,0.03)}
+    .cert-info{font-size:14px;color:var(--muted)}
+    @media(max-width:760px){.cert-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -52,61 +50,92 @@
     </section>
 
     <section class="card">
-      <h2>Projects</h2>
-
+      <h2>Project — Bank Account Management System</h2>
       <div class="project">
         <h3>Bank Account Management System</h3>
         <p class="muted">C++ • OOP • File I/O</p>
         <p>Developed a mini banking system that simulates account creation, deposits, withdrawals, and balance checks. The demo version runs directly in the browser for learning and demonstration.</p>
-        <p>
-          <a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a>
-        </p>
+        <p><a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a></p>
         <img src="assets/project-banking.png" alt="Bank demo screenshot" class="screenshot">
       </div>
     </section>
 
     <section class="card">
       <h2>Certifications</h2>
-      <ul>
-        <li><strong>Adobe Hackathon — Team Project</strong> (Certificate of Participation)
-          <br><span class="muted">Gained experience in collaboration, ideation, and rapid prototyping under time constraints.</span>
-        </li>
-        <li>Generative AI for All — Infosys Springboard</li>
-        <li>Advanced C++ Programming — Certificate</li>
-        <li>HTML Web Development — Certificate</li>
-      </ul>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <img class="cert-thumb" src="assets/Adobe_Hackathon.jpg" alt="Adobe Hackathon">
+          <div class="cert-info">
+            <strong style="color:#e6eef6">Adobe Hackathon — Team Project</strong><br>
+            Certificate of Participation from Adobe Hackathon (Unstop/Adobe). Gained skills in team collaboration and rapid prototyping.<br>
+            <a href="assets/Adobe_Hackathon.jpg" target="_blank">View certificate</a>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <img class="cert-thumb" src="assets/CodeStorm_Certificate.jpg" alt="CodeStorm certificate">
+          <div class="cert-info">
+            <strong style="color:#e6eef6">CodeStorm — Participation</strong><br>
+            Certificate from CodeStorm 2025 event — team participation and coding challenge. <br>
+            <a href="assets/CodeStorm_Certificate.jpg" target="_blank">View certificate</a>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <img class="cert-thumb" src="assets/CPlusPlus_Fundamentals.pdf" alt="C++ certificate" style="object-fit:contain;">
+          <div class="cert-info">
+            <strong style="color:#e6eef6">C++ Fundamentals</strong><br>
+            Completed C++ Fundamentals course (Aug 2024).<br>
+            <a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank">Open PDF</a>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <img class="cert-thumb" src="assets/Java_Features.pdf" alt="Java certificate" style="object-fit:contain;">
+          <div class="cert-info">
+            <strong style="color:#e6eef6">Java Features</strong><br>
+            Completed Java Features course (Mar 2025).<br>
+            <a href="assets/Java_Features.pdf" target="_blank">Open PDF</a>
+          </div>
+        </div>
+
+        <div class="cert-card" style="grid-column:1 / -1">
+          <img class="cert-thumb" src="assets/GenerativeAI_for_All.pdf" alt="Generative AI certificate" style="object-fit:contain;">
+          <div class="cert-info">
+            <strong style="color:#e6eef6">Generative AI for All — Infosys Springboard</strong><br>
+            Completed the Generative AI for All course (Jul 2025).<br>
+            <a href="assets/GenerativeAI_for_All.pdf" target="_blank">Open PDF</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="card">
       <h2>Resume & Contact</h2>
-      <p>
-        <a class="btn" href="Thameem_Resume.pdf" target="_blank">Download Resume</a>
-      </p>
+      <p><a class="btn" href="Thameem_Resume.pdf" target="_blank">Download Resume</a></p>
       <p class="muted">For internship or project opportunities, please email <a href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a>.</p>
-      <p style="margin-top:12px">
-        <a class="btn" href="index.html" data-fade>⬅ Back to Home</a>
-      </p>
+      <p style="margin-top:12px"><a class="btn" href="index.html" data-fade>⬅ Back to Home</a></p>
     </section>
 
     <footer>© <span id="year"></span> A. Thameem — Portfolio</footer>
   </div>
 
   <script>
-  document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('year').textContent=new Date().getFullYear();
 
-  const wrap = document.querySelector('.wrap');
-  window.addEventListener('DOMContentLoaded', () => setTimeout(()=>wrap.classList.add('fade-in'), 30));
+    const wrap = document.querySelector('.wrap');
+    window.addEventListener('DOMContentLoaded', () => setTimeout(()=>wrap.classList.add('fade-in'), 30));
 
-  document.addEventListener('click', function(e){
-    const a = e.target.closest && e.target.closest('a[data-fade]');
-    if(!a) return;
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-    e.preventDefault();
-    const href = a.getAttribute('href');
-    wrap.classList.remove('fade-in');
-    wrap.classList.add('fade-out');
-    setTimeout(()=> window.location.href = href, 400);
-  });
+    document.addEventListener('click', function(e){
+      const a = e.target.closest && e.target.closest('a[data-fade]');
+      if(!a) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      e.preventDefault();
+      const href = a.getAttribute('href');
+      wrap.classList.remove('fade-in');
+      wrap.classList.add('fade-out');
+      setTimeout(()=> window.location.href = href, 420);
+    });
   </script>
 </body>
 </html>
