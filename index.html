@@ -18,7 +18,8 @@
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
     html,body{height:100%;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
-    .wrap{max-width:980px;margin:28px auto;padding:22px;border-radius:14px;background:linear-gradient(180deg,transparent,transparent)}
+    .wrap{max-width:980px;margin:28px auto;padding:22px;border-radius:14px;background:linear-gradient(180deg,transparent,transparent);transition:opacity 0.4s ease;}
+    .wrap.fade-out{opacity:0;pointer-events:none;}
     header{display:flex;gap:14px;align-items:center}
     .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:26px}
     h1{margin:0;font-size:24px}
@@ -64,11 +65,11 @@
       </div>
 
       <div class="project">
-        <h3>Personal Portfolio Website</h3>
+        <h3>Portfolio & Certifications</h3>
         <p class="muted">HTML5 • Responsive • GitHub Pages</p>
-        <p>Designed and developed a personal website using HTML5 and CSS for responsive layout. Hosted on GitHub Pages to showcase projects and certifications online.</p>
+        <p>View my main projects and earned certifications in a dedicated portfolio page.</p>
         <p>
-          <a class="btn" href="portfolio.html" target="_blank" rel="noopener">View Portfolio Page</a>
+          <a class="btn" href="portfolio.html" data-fade>View Portfolio Page</a>
         </p>
         <img src="assets/project-portfolio.png" alt="Portfolio screenshot" class="screenshot">
       </div>
@@ -102,6 +103,23 @@
     <footer>© <span id="year"></span> A. Thameem — Portfolio</footer>
   </div>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  // Fade transition when navigating to portfolio.html
+  (function(){
+    const wrap = document.querySelector('.wrap');
+    if(!wrap) return;
+    document.addEventListener('click', function(e){
+      const a = e.target.closest && e.target.closest('a[data-fade]');
+      if(!a) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      e.preventDefault();
+      const href = a.getAttribute('href');
+      wrap.classList.add('fade-out');
+      setTimeout(()=> window.location.href = href, 400);
+    });
+  })();
+  </script>
 </body>
 </html>
