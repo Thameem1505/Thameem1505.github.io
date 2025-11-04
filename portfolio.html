@@ -18,7 +18,9 @@
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
     html,body{height:100%;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
-    .wrap{max-width:960px;margin:28px auto;padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .wrap{max-width:960px;margin:28px auto;padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);opacity:0;transition:opacity 0.5s ease;}
+    .wrap.fade-in{opacity:1;}
+    .wrap.fade-out{opacity:0;pointer-events:none;}
     header{display:flex;gap:14px;align-items:center}
     .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#042033;font-weight:700;font-size:26px}
     h1{margin:0;font-size:24px}
@@ -61,8 +63,6 @@
         </p>
         <img src="assets/project-banking.png" alt="Bank demo screenshot" class="screenshot">
       </div>
-
-    
     </section>
 
     <section class="card">
@@ -84,15 +84,29 @@
       </p>
       <p class="muted">For internship or project opportunities, please email <a href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a>.</p>
       <p style="margin-top:12px">
-        <a class="btn" href="index.html">⬅ Back to Home</a>
+        <a class="btn" href="index.html" data-fade>⬅ Back to Home</a>
       </p>
     </section>
 
     <footer>© <span id="year"></span> A. Thameem — Portfolio</footer>
   </div>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  const wrap = document.querySelector('.wrap');
+  window.addEventListener('DOMContentLoaded', () => setTimeout(()=>wrap.classList.add('fade-in'), 30));
+
+  document.addEventListener('click', function(e){
+    const a = e.target.closest && e.target.closest('a[data-fade]');
+    if(!a) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    e.preventDefault();
+    const href = a.getAttribute('href');
+    wrap.classList.remove('fade-in');
+    wrap.classList.add('fade-out');
+    setTimeout(()=> window.location.href = href, 400);
+  });
+  </script>
 </body>
 </html>
-
-
