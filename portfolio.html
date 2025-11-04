@@ -25,6 +25,7 @@
     .screenshot{width:100%;height:180px;object-fit:cover;border-radius:8px;background:#071026;border:1px solid rgba(255,255,255,0.04)}
     footer{text-align:center;margin-top:24px;color:var(--muted);font-size:13px}
     a{color:var(--accent);text-decoration:none}
+    .accent{color:var(--accent);font-weight:600}
     .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
     .skill-card{background:#071026;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
     .skill-card h3{margin:0 0 8px 0;color:var(--accent);font-size:15px}
@@ -34,9 +35,9 @@
     .cert-card{background:#071026;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:12px;align-items:center}
     .cert-thumb{width:98px;height:70px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,0.03)}
     .cert-info{font-size:14px;color:var(--muted)}
-    @media(max-width:760px){
-      .skills-grid,.cert-grid{grid-template-columns:1fr}
-    }
+    .github-activity{margin-top:10px;border-radius:8px;padding:10px;background:#071026;border:1px solid rgba(255,255,255,0.03);text-align:center}
+    .github-activity img{max-width:100%;height:auto;border-radius:6px}
+    @media(max-width:760px){.skills-grid,.cert-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -52,63 +53,89 @@
       </div>
     </header>
 
+    <!-- Full, combined About (detailed) -->
     <section class="card">
       <h2>About</h2>
-      <p>I’m a 3rd-year engineering student specializing in C++ and software development. This page showcases my projects, certifications, and technical skills, all hosted and managed on GitHub.</p>
+      <p>
+        I’m an enthusiastic and diligent 3rd-year engineering student at Easwari Engineering College, Chennai, expected to graduate in 2027.
+        I specialize in <span class="accent">C++</span> and software development, with hands-on experience in object-oriented programming, file handling, and responsive web design.
+      </p>
+      <p>
+        I have a keen ability to navigate complex challenges and stay composed under pressure.
+        I’m dedicated to applying my problem-solving skills to effectively contribute to team goals and project success.
+        This portfolio showcases my projects, certifications, and technical skills — all hosted and managed on <span class="accent">GitHub</span>.
+      </p>
     </section>
 
+    <!-- Project -->
     <section class="card">
       <h2>Project — Bank Account Management System</h2>
       <p class="muted">C++ • OOP • File I/O</p>
-      <p>Developed a banking system that supports account creation, deposits, withdrawals, and balance checks — implemented using C++ object-oriented principles and file handling.</p>
+      <p>Developed a banking system that supports account creation, deposits, withdrawals, and balance checks — implemented using object-oriented principles and file handling.</p>
       <p><a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a></p>
-      <img src="assets/project-banking.png" alt="Banking System Screenshot" class="screenshot">
+      <img src="assets/project-banking.png" alt="Banking System" class="screenshot">
     </section>
 
+    <!-- Skills -->
     <section class="card">
       <h2>Technical Skills</h2>
       <div class="skills-grid">
         <div class="skill-card">
           <h3>Programming</h3>
           <ul>
-            <li>C++ — Object-Oriented Programming & Projects</li>
-            <li>Python — Scripting and Automation</li>
-            <li>C, Java — Coursework and practice</li>
+            <li><span class="accent">C++</span> — Object-Oriented Programming & projects</li>
+            <li>Python — scripting and small tools</li>
+            <li>C, Java — coursework and practice</li>
           </ul>
         </div>
         <div class="skill-card">
           <h3>Web / Tools / Database</h3>
           <ul>
-            <li>HTML5 — Front-end design basics</li>
-            <li>SQL — Database queries and structure design</li>
+            <li><span class="accent">HTML5</span> — responsive markup and layout</li>
+            <li><span class="accent">SQL</span> — basic queries and schema understanding</li>
             <li>MS Office, Google Docs, MS Excel</li>
-            <li>Git & GitHub — All code hosted and versioned on GitHub</li>
+            <li><span class="accent">Git & GitHub</span> — repositories, commits, and hosting projects</li>
           </ul>
         </div>
       </div>
+
+      <!-- GitHub activity chart -->
+      <div class="github-activity">
+        <h3 style="margin-top:0;color:var(--accent)">GitHub Activity</h3>
+        <p class="muted">Recent contribution activity on GitHub (visual)</p>
+        <!-- public chart service (if blocked, you can replace with a different widget or image) -->
+        <a href="https://github.com/Thameem1505" target="_blank" rel="noopener">
+          <img src="https://ghchart.rshah.org/Thameem1505" alt="GitHub contributions chart for Thameem1505">
+        </a>
+      </div>
     </section>
 
+    <!-- Certifications -->
     <section class="card">
       <h2>Certifications</h2>
       <div class="cert-grid">
         <div class="cert-card">
-          <a href="assets/Adobe_Hackathon.jpg" target="_blank"><img class="cert-thumb" src="assets/Adobe_thumb.png" alt="Adobe Hackathon"></a>
+          <a href="assets/Adobe_Hackathon.jpg" target="_blank" rel="noopener"><img class="cert-thumb" src="assets/Adobe_thumb.png" alt="Adobe Hackathon"></a>
           <div class="cert-info"><strong style="color:#e6eef6">Adobe Hackathon — Team Project</strong><br>Certificate of Participation.<br><a href="assets/Adobe_Hackathon.jpg" target="_blank">View Certificate</a></div>
         </div>
+
         <div class="cert-card">
-          <a href="assets/CodeStorm_Certificate.jpg" target="_blank"><img class="cert-thumb" src="assets/CodeStorm_thumb.png" alt="CodeStorm"></a>
+          <a href="assets/CodeStorm_Certificate.jpg" target="_blank" rel="noopener"><img class="cert-thumb" src="assets/CodeStorm_thumb.png" alt="CodeStorm"></a>
           <div class="cert-info"><strong style="color:#e6eef6">CodeStorm — Participation</strong><br>Certificate from CodeStorm 2025.<br><a href="assets/CodeStorm_Certificate.jpg" target="_blank">View Certificate</a></div>
         </div>
+
         <div class="cert-card">
-          <a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank"><img class="cert-thumb" src="assets/CPlusPlus_thumb.png" alt="C++"></a>
+          <a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank" rel="noopener"><img class="cert-thumb" src="assets/CPlusPlus_thumb.png" alt="C++"></a>
           <div class="cert-info"><strong style="color:#e6eef6">C++ Fundamentals</strong><br>Completed foundational course.<br><a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank">View Certificate</a></div>
         </div>
+
         <div class="cert-card">
-          <a href="assets/Java_Features.pdf" target="_blank"><img class="cert-thumb" src="assets/Java_thumb.png" alt="Java"></a>
+          <a href="assets/Java_Features.pdf" target="_blank" rel="noopener"><img class="cert-thumb" src="assets/Java_thumb.png" alt="Java"></a>
           <div class="cert-info"><strong style="color:#e6eef6">Java Features</strong><br>Completed Java course.<br><a href="assets/Java_Features.pdf" target="_blank">View Certificate</a></div>
         </div>
+
         <div class="cert-card" style="grid-column:1/-1">
-          <a href="assets/GenerativeAI_for_All.pdf" target="_blank"><img class="cert-thumb" src="assets/GenerativeAI_thumb.png" alt="Generative AI"></a>
+          <a href="assets/GenerativeAI_for_All.pdf" target="_blank" rel="noopener"><img class="cert-thumb" src="assets/GenerativeAI_thumb.png" alt="Generative AI"></a>
           <div class="cert-info"><strong style="color:#e6eef6">Generative AI for All — Infosys Springboard</strong><br>Completed Generative AI for All program.<br><a href="assets/GenerativeAI_for_All.pdf" target="_blank">View Certificate</a></div>
         </div>
       </div>
@@ -116,7 +143,7 @@
 
     <section class="card">
       <h2>Resume & Contact</h2>
-      <p><a class="btn" href="Thameem_Resume.pdf" target="_blank">Download Resume</a></p>
+      <p><a class="btn" href="Thameem_Resume.pdf" target="_blank" rel="noopener">Download Resume</a></p>
       <p class="muted">For internships or opportunities → <a href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a></p>
       <p style="margin-top:12px"><a class="btn" href="index.html" data-fade>⬅ Back to Home</a></p>
     </section>
@@ -125,7 +152,7 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
     const wrap=document.querySelector('.wrap');
     window.addEventListener('DOMContentLoaded',()=>setTimeout(()=>wrap.classList.add('fade-in'),30));
     document.addEventListener('click',function(e){
