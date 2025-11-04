@@ -1,35 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>A. Thameem — Project Portfolio</title>
-  <meta name="description" content="Detailed projects and certifications of A. Thameem — BE Student, Easwari Engineering College."/>
   <style>
     :root{
-      --bg:#0b1220; --card:#101a2f; --text:#e6eef6; --muted:#9aa6b2;
-      --accent:#00a3ff; --accent-2:#6de0ff; --border:rgba(255,255,255,0.08);
-      font-family: Inter,system-ui,Arial;
+      --bg:#0b1220;--card:#101a2f;--text:#e6eef6;--muted:#9aa6b2;
+      --accent:#00a3ff;--accent-2:#6de0ff;--border:rgba(255,255,255,0.08);
+      font-family:Inter,system-ui,Arial,sans-serif;
     }
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
-    .wrap{max-width:960px;margin:28px auto;padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);opacity:0;transition:opacity 0.5s ease;}
-    .wrap.fade-in{opacity:1;}
-    .wrap.fade-out{opacity:0;pointer-events:none;}
+    body{margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+    .wrap{max-width:960px;margin:28px auto;padding:20px;opacity:0;transition:opacity .5s ease}
+    .wrap.fade-in{opacity:1}
+    .wrap.fade-out{opacity:0;pointer-events:none}
     header{display:flex;gap:14px;align-items:center}
     .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#042033;font-weight:700;font-size:26px}
-    h1{margin:0;font-size:24px}
-    .muted{color:var(--muted);font-size:14px}
-    .card{background:var(--card);padding:16px;border-radius:10px;margin-top:16px;border:1px solid var(--border);box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    .card{background:var(--card);padding:16px;border-radius:10px;margin-top:16px;border:1px solid var(--border)}
     .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042033;text-decoration:none;font-weight:600}
     .screenshot{width:100%;height:180px;object-fit:cover;border-radius:8px;background:#071026;border:1px solid var(--border)}
-    footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
-    a{color:var(--accent);text-decoration:none}
-    h2{margin-top:0}
-    .project{margin-top:20px}
     .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .cert-card{background:#071026;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:10px;align-items:center}
     .cert-thumb{width:98px;height:70px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,0.03)}
     .cert-info{font-size:14px;color:var(--muted)}
+    footer{text-align:center;margin-top:24px;color:var(--muted);font-size:13px}
     @media(max-width:760px){.cert-grid{grid-template-columns:1fr}}
   </style>
 </head>
@@ -39,72 +33,50 @@
       <div class="avatar">T</div>
       <div>
         <h1>A. Thameem</h1>
-        <div class="muted">3rd Year BE — Easwari Engineering College • Class of 2027</div>
-        <div class="muted">📧 <a href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a> • 🌐 <a href="https://github.com/Thameem1505" target="_blank">GitHub</a></div>
+        <div style="color:#9aa6b2;font-size:14px;">3rd Year BE — Easwari Engineering College • Class of 2027</div>
+        <div style="color:#9aa6b2;font-size:14px;">📧 <a href="mailto:thameem151205@gmail.com" style="color:#00a3ff">thameem151205@gmail.com</a> • 🌐 <a href="https://github.com/Thameem1505" target="_blank" style="color:#00a3ff">GitHub</a></div>
       </div>
     </header>
 
     <section class="card">
       <h2>About</h2>
-      <p>I’m a third-year engineering student specializing in software development and programming. I enjoy creating small, interactive projects that apply concepts like OOP, file handling, and responsive web design. This page showcases my main projects and earned certifications.</p>
+      <p>I’m a third-year engineering student specializing in software development and programming. This page presents detailed projects and earned certifications.</p>
     </section>
 
     <section class="card">
       <h2>Project — Bank Account Management System</h2>
-      <div class="project">
-        <p class="muted">C++ • OOP • File I/O</p>
-        <p>Developed a mini banking system that simulates account creation, deposits, withdrawals, and balance checks. The demo version runs directly in the browser for learning and demonstration.</p>
-        <p><a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a></p>
-        <img src="assets/project-banking.png" alt="Bank demo screenshot" class="screenshot">
-      </div>
+      <p class="muted">C++ • OOP • File I/O</p>
+      <p>Developed a mini banking system that simulates account creation, deposits, withdrawals, and balance checks.</p>
+      <p><a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a></p>
+      <img src="assets/project-banking.png" alt="Banking System Screenshot" class="screenshot">
     </section>
 
     <section class="card">
       <h2>Certifications</h2>
       <div class="cert-grid">
         <div class="cert-card">
-          <a href="assets/Adobe_Hackathon.jpg" target="_blank"><img class="cert-thumb" src="assets/Adobe_Hackathon_thumb.png" alt="Adobe Hackathon"></a>
-          <div class="cert-info">
-            <strong style="color:#e6eef6">Adobe Hackathon — Team Project</strong><br>
-            Certificate of Participation from Adobe Hackathon.<br>
-            <a href="assets/Adobe_Hackathon.jpg" target="_blank">View Certificate</a>
-          </div>
+          <a href="assets/Adobe_Hackathon.jpg" target="_blank"><img class="cert-thumb" src="assets/Adobe_thumb.png" alt="Adobe Hackathon Thumb"></a>
+          <div class="cert-info"><strong style="color:#e6eef6">Adobe Hackathon — Team Project</strong><br>Certificate of Participation.<br><a href="assets/Adobe_Hackathon.jpg" target="_blank">View Certificate</a></div>
         </div>
 
         <div class="cert-card">
-          <a href="assets/CodeStorm_Certificate.jpg" target="_blank"><img class="cert-thumb" src="assets/CodeStorm_Certificate_thumb.png" alt="CodeStorm certificate"></a>
-          <div class="cert-info">
-            <strong style="color:#e6eef6">CodeStorm — Participation</strong><br>
-            Certificate from CodeStorm 2025 event.<br>
-            <a href="assets/CodeStorm_Certificate.jpg" target="_blank">View Certificate</a>
-          </div>
+          <a href="assets/CodeStorm_Certificate.jpg" target="_blank"><img class="cert-thumb" src="assets/CodeStorm_thumb.png" alt="CodeStorm Thumb"></a>
+          <div class="cert-info"><strong style="color:#e6eef6">CodeStorm — Participation</strong><br>Certificate from CodeStorm 2025 event.<br><a href="assets/CodeStorm_Certificate.jpg" target="_blank">View Certificate</a></div>
         </div>
 
         <div class="cert-card">
-          <a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank"><img class="cert-thumb" src="assets/CPlusPlus_Fundamentals_thumb.png" alt="C++ certificate"></a>
-          <div class="cert-info">
-            <strong style="color:#e6eef6">C++ Fundamentals</strong><br>
-            Completed C++ Fundamentals course.<br>
-            <a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank">View Certificate</a>
-          </div>
+          <a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank"><img class="cert-thumb" src="assets/CPlusPlus_thumb.png" alt="C++ Thumb"></a>
+          <div class="cert-info"><strong style="color:#e6eef6">C++ Fundamentals</strong><br>Completed C++ Fundamentals course.<br><a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank">View Certificate</a></div>
         </div>
 
         <div class="cert-card">
-          <a href="assets/Java_Features.pdf" target="_blank"><img class="cert-thumb" src="assets/Java_Features_thumb.png" alt="Java certificate"></a>
-          <div class="cert-info">
-            <strong style="color:#e6eef6">Java Features</strong><br>
-            Completed Java Features course.<br>
-            <a href="assets/Java_Features.pdf" target="_blank">View Certificate</a>
-          </div>
+          <a href="assets/Java_Features.pdf" target="_blank"><img class="cert-thumb" src="assets/Java_thumb.png" alt="Java Thumb"></a>
+          <div class="cert-info"><strong style="color:#e6eef6">Java Features</strong><br>Completed Java Features course.<br><a href="assets/Java_Features.pdf" target="_blank">View Certificate</a></div>
         </div>
 
-        <div class="cert-card" style="grid-column:1 / -1">
-          <a href="assets/GenerativeAI_for_All.pdf" target="_blank"><img class="cert-thumb" src="assets/GenerativeAI_for_All_thumb.png" alt="Generative AI certificate"></a>
-          <div class="cert-info">
-            <strong style="color:#e6eef6">Generative AI for All — Infosys Springboard</strong><br>
-            Completed the Generative AI for All course.<br>
-            <a href="assets/GenerativeAI_for_All.pdf" target="_blank">View Certificate</a>
-          </div>
+        <div class="cert-card" style="grid-column:1/-1">
+          <a href="assets/GenerativeAI_for_All.pdf" target="_blank"><img class="cert-thumb" src="assets/GenerativeAI_thumb.png" alt="Generative AI Thumb"></a>
+          <div class="cert-info"><strong style="color:#e6eef6">Generative AI for All — Infosys Springboard</strong><br>Completed the Generative AI for All course.<br><a href="assets/GenerativeAI_for_All.pdf" target="_blank">View Certificate</a></div>
         </div>
       </div>
     </section>
@@ -112,7 +84,7 @@
     <section class="card">
       <h2>Resume & Contact</h2>
       <p><a class="btn" href="Thameem_Resume.pdf" target="_blank">Download Resume</a></p>
-      <p class="muted">For internship or project opportunities, please email <a href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a>.</p>
+      <p class="muted">For internship or project opportunities, email <a href="mailto:thameem151205@gmail.com">thameem151205@gmail.com</a>.</p>
       <p style="margin-top:12px"><a class="btn" href="index.html" data-fade>⬅ Back to Home</a></p>
     </section>
 
@@ -120,20 +92,18 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-
-    const wrap = document.querySelector('.wrap');
-    window.addEventListener('DOMContentLoaded', () => setTimeout(()=>wrap.classList.add('fade-in'), 30));
-
-    document.addEventListener('click', function(e){
-      const a = e.target.closest && e.target.closest('a[data-fade]');
-      if(!a) return;
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    document.getElementById("year").textContent=new Date().getFullYear();
+    const wrap=document.querySelector(".wrap");
+    window.addEventListener("DOMContentLoaded",()=>setTimeout(()=>wrap.classList.add("fade-in"),30));
+    document.addEventListener("click",e=>{
+      const a=e.target.closest&&e.target.closest("a[data-fade]");
+      if(!a)return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1)return;
       e.preventDefault();
-      const href = a.getAttribute('href');
-      wrap.classList.remove('fade-in');
-      wrap.classList.add('fade-out');
-      setTimeout(()=> window.location.href = href, 420);
+      const href=a.getAttribute("href");
+      wrap.classList.remove("fade-in");
+      wrap.classList.add("fade-out");
+      setTimeout(()=>location.href=href,420);
     });
   </script>
 </body>
