@@ -58,7 +58,7 @@
       <h2>About</h2>
       <p>
         I’m an enthusiastic and diligent 3rd-year engineering student at Easwari Engineering College, Chennai, expected to graduate in 2027.
-        I specialize in <span class="accent">C++</span> and software development, with hands-on experience in object-oriented programming, file handling, and responsive web design.
+        I specialize in C++ and software development, with hands-on experience in object-oriented programming, file handling, and responsive web design.
       </p>
       <p>
         I have a keen ability to navigate complex challenges and stay composed under pressure.
@@ -70,10 +70,22 @@
     <!-- Project -->
     <section class="card">
       <h2>Project — Bank Account Management System</h2>
-      <p class="muted">C++ • OOP • File I/O</p>
-      <p>Developed a banking system that supports account creation, deposits, withdrawals, and balance checks — implemented using object-oriented principles and file handling.</p>
+      <p class="muted">Browser-based interactive banking demo (HTML / CSS / JavaScript)</p>
+      <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+
+      <p>
+        This interactive mini-project simulates a small banking platform and demonstrates:
+        user registration & login, creation of multiple account types (saving, checking, business), deposits, withdrawals, fund transfers (including cross-user transfers),
+        balance inquiry, transaction logging, date-range filtering for statements, and CSV export of account statements.
+      </p>
+
+      <p>
+        The demo uses form validation, client-side data structures to store users/accounts/transactions, and a transactions table that displays timestamps, type, amount and resulting balances.
+        It’s designed for learning core system behaviors (transaction recording, state updates, and UI feedback) and for demonstrating practical front-end form handling and small-scale state management.
+      </p>
+
       <p><a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a></p>
-      <img src="assets/project-banking.png" alt="Banking System" class="screenshot">
+      <img src="assets/project-banking.png" alt="Banking System Screenshot" class="screenshot">
     </section>
 
     <!-- Skills -->
@@ -83,7 +95,7 @@
         <div class="skill-card">
           <h3>Programming</h3>
           <ul>
-            <li><span class="accent">C++</span> — Object-Oriented Programming & projects</li>
+            <li>C++ — Object-Oriented Programming & projects</li>
             <li>Python — scripting and small tools</li>
             <li>C, Java — coursework and practice</li>
           </ul>
@@ -103,7 +115,6 @@
       <div class="github-activity">
         <h3 style="margin-top:0;color:var(--accent)">GitHub Activity</h3>
         <p class="muted">Recent contribution activity on GitHub (visual)</p>
-        <!-- public chart service (if blocked, you can replace with a different widget or image) -->
         <a href="https://github.com/Thameem1505" target="_blank" rel="noopener">
           <img src="https://ghchart.rshah.org/Thameem1505" alt="GitHub contributions chart for Thameem1505">
         </a>
@@ -152,7 +163,7 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent=new Date().getFullYear();
     const wrap=document.querySelector('.wrap');
     window.addEventListener('DOMContentLoaded',()=>setTimeout(()=>wrap.classList.add('fade-in'),30));
     document.addEventListener('click',function(e){
