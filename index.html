@@ -4,33 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>A. Thameem — Student Portfolio</title>
-  <meta name="description" content="Portfolio of A. Thameem — BE Student, Easwari Engineering College. Projects and Certifications."/>
   <style>
     :root{
       --bg:#f6f8fb; --card:#ffffff; --text:#042033; --muted:#4b5563;
-      --accent:#0b69ff; --accent-2:#00a3ff; --border:#e6eef6; --radius:12px;
-      font-family: Inter,system-ui,Arial;
+      --accent:#0b69ff; --accent-2:#00a3ff; --border:#e6eef6;
+      font-family:Inter,system-ui,Arial,sans-serif;
     }
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
-    .wrap{max-width:980px;margin:28px auto;padding:22px;border-radius:14px;background:linear-gradient(180deg,transparent,transparent);transition:opacity 0.4s ease;}
-    .wrap.fade-out{opacity:0;pointer-events:none;}
+    html,body{margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+    .wrap{max-width:980px;margin:28px auto;padding:22px;transition:opacity .42s ease}
+    .wrap.fade-out{opacity:0;pointer-events:none}
     header{display:flex;gap:14px;align-items:center}
-    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:26px}
+    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:26px}
     h1{margin:0;font-size:24px}
     .muted{color:var(--muted);font-size:14px}
     .card{background:var(--card);padding:16px;border-radius:10px;margin-top:16px;border:1px solid var(--border);box-shadow:0 6px 18px rgba(12,18,30,0.03)}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;text-decoration:none;font-weight:600}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;text-decoration:none;font-weight:600}
     .screenshot{width:100%;height:180px;object-fit:cover;border-radius:8px;background:#eef6ff;border:1px solid var(--border)}
-    footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
-    a{color:var(--accent);text-decoration:none}
-    h2{margin-top:0}
-    .project{margin-top:20px}
-    ul{padding-left:18px}
-    .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .cert-card{background:#f9fcff;border:1px solid var(--border);padding:12px;border-radius:10px;display:flex;gap:10px;align-items:center}
-    .cert-thumb{width:98px;height:70px;object-fit:cover;border-radius:6px;border:1px solid var(--border)}
-    .cert-info{font-size:14px}
-    @media(max-width:760px){.cert-grid{grid-template-columns:1fr}}
+    footer{text-align:center;margin-top:24px;color:var(--muted);font-size:13px}
   </style>
 </head>
 <body>
@@ -46,83 +36,22 @@
 
     <section class="card">
       <h2>About</h2>
-      <p>I am a third-year BE student passionate about software development, web design, and programming in C++ and Python. I enjoy learning by building small, functional projects that strengthen my technical and problem-solving skills.</p>
-      <p>This site highlights my key projects and certifications.</p>
+      <p>I’m a third-year BE student passionate about software development, web design, and programming in C++ and Python. This site highlights my key projects and certifications.</p>
     </section>
 
     <section class="card">
-      <h2>Selected Projects</h2>
-
-      <div class="project">
-        <h3>Bank Account Management System</h3>
-        <p class="muted">C++ • OOP • File I/O</p>
-        <p>This mini project simulates basic banking operations such as creating accounts, deposits, withdrawals, and checking balances. The demo runs directly in the browser for practice and demonstration.</p>
-        <p><a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a></p>
-        <img src="assets/project-banking.png" alt="Banking system screenshot" class="screenshot">
-      </div>
-
-      <div class="project">
-        <h3>Portfolio & Certifications</h3>
-        <p class="muted">HTML5 • Responsive • GitHub Pages</p>
-        <p>View my main projects and earned certifications in a dedicated portfolio page.</p>
-        <p><a class="btn" href="portfolio.html" data-fade>View Portfolio Page</a></p>
-        <img src="assets/project-portfolio.png" alt="Portfolio screenshot" class="screenshot">
-      </div>
+      <h2>Featured Projects</h2>
+      <h3>Bank Account Management System</h3>
+      <p class="muted">C++ • OOP • File I/O</p>
+      <p>Simulates basic banking operations like account creation, deposits, withdrawals, and balance checks.</p>
+      <p><a class="btn" href="BANK.html" target="_blank" rel="noopener">Open Demo</a></p>
+      <img src="assets/project-banking.png" alt="Banking System Screenshot" class="screenshot">
     </section>
 
     <section class="card">
-      <h2>Certifications</h2>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <a href="assets/Adobe_Hackathon.jpg" target="_blank"><img class="cert-thumb" src="assets/Adobe_Hackathon_thumb.png" alt="Adobe Hackathon certificate"></a>
-          <div class="cert-info">
-            <strong>Adobe Hackathon — Team Project</strong><br>
-            Certificate of Participation (Adobe Hackathon).<br>
-            <a href="assets/Adobe_Hackathon.jpg" target="_blank">View Certificate</a>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <a href="assets/CodeStorm_Certificate.jpg" target="_blank"><img class="cert-thumb" src="assets/CodeStorm_Certificate_thumb.png" alt="CodeStorm certificate"></a>
-          <div class="cert-info">
-            <strong>CodeStorm — Team Participant</strong><br>
-            Recognised participation in CodeStorm 2025 hackathon/event.<br>
-            <a href="assets/CodeStorm_Certificate.jpg" target="_blank">View Certificate</a>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank"><img class="cert-thumb" src="assets/CPlusPlus_Fundamentals_thumb.png" alt="C++ certificate"></a>
-          <div class="cert-info">
-            <strong>C++ Fundamentals</strong><br>
-            Certificate for completing C++ Fundamentals course (Aug 2024).<br>
-            <a href="assets/CPlusPlus_Fundamentals.pdf" target="_blank">View Certificate</a>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <a href="assets/Java_Features.pdf" target="_blank"><img class="cert-thumb" src="assets/Java_Features_thumb.png" alt="Java certificate"></a>
-          <div class="cert-info">
-            <strong>Java Features</strong><br>
-            Certificate for completing Java Features course (Mar 2025).<br>
-            <a href="assets/Java_Features.pdf" target="_blank">View Certificate</a>
-          </div>
-        </div>
-
-        <div class="cert-card" style="grid-column:1 / -1">
-          <a href="assets/GenerativeAI_for_All.pdf" target="_blank"><img class="cert-thumb" src="assets/GenerativeAI_for_All_thumb.png" alt="Generative AI certificate"></a>
-          <div class="cert-info">
-            <strong>Generative AI for All — Infosys Springboard</strong><br>
-            Course certificate (July 2025).<br>
-            <a href="assets/GenerativeAI_for_All.pdf" target="_blank">View Certificate</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Skills</h2>
-      <p class="muted">C++ • Python • Java • HTML5 • CSS • SQL • MS Office</p>
+      <h2>Explore More</h2>
+      <p>View my detailed projects and certifications in the dark-theme portfolio page.</p>
+      <p><a class="btn" href="portfolio.html" data-fade>View Portfolio Page</a></p>
     </section>
 
     <section class="card">
@@ -135,22 +64,17 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-
-    // Fade to portfolio page
-    (function(){
-      const wrap = document.querySelector('.wrap');
-      if(!wrap) return;
-      document.addEventListener('click', function(e){
-        const a = e.target.closest && e.target.closest('a[data-fade]');
-        if(!a) return;
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-        e.preventDefault();
-        const href = a.getAttribute('href');
-        wrap.classList.add('fade-out');
-        setTimeout(()=> window.location.href = href, 420);
-      });
-    })();
+    document.getElementById("year").textContent=new Date().getFullYear();
+    const wrap=document.querySelector(".wrap");
+    document.addEventListener("click",e=>{
+      const a=e.target.closest&&e.target.closest("a[data-fade]");
+      if(!a)return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1)return;
+      e.preventDefault();
+      const href=a.getAttribute("href");
+      wrap.classList.add("fade-out");
+      setTimeout(()=>location.href=href,420);
+    });
   </script>
 </body>
 </html>
