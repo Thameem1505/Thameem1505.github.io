@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Banking System Mini-Project</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f8fa;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #0074d9;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+  }
+  main {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  h2 {
+    margin-top: 0;
+  }
+  form {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  input, select, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  button:hover {
+    background-color: #005fa3;
+  }
+  .hidden {
+    display: none;
+  }
+  .balance-display {
+    font-size: 1.2em;
+    padding: 10px 0;
+    font-weight: bold;
+  }
+  .transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  .transactions-table th, .transactions-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .transactions-table th {
+    background-color: #f2f2f2;
+  }
+  .error {
+    color: darkred;
+    margin-top: 5px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Banking System Mini-Project</h1>
+</header>
+
+<main>
+
+  <!-- Authentication Section -->
+  <section id="auth-section">
+    <h2>User Authentication</h2>
+    <div id="register-form">
+      <h3>Register</h3>
+      <form id="form-register">
+        <label for="reg-username">Username</label>
+        <input type="text" id="reg-username" required minlength="3" maxlength="20"/>
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" required minlength="6"/>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    <div id="login-form" style="margin-top: 20px;">
+      <h3>Login</h3>
+      <form id="form-login">
+        <label for="login-username">Username</label>
+        <input type="text" id="login-username" required/>
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required/>
+        <button type="submit">Login</button>
+      </form>
+      <div class="error" id="login-error"></div>
+    </div>
+  </section>
+
+  <!-- Banking Operations Section -->
+  <section id="banking-section" class="hidden">
+    <h2>Banking Operations</h2>
+    <div>
+      <button id="logout-button" style="float:right; width:auto; padding:6px 12px;">Logout</button>
+      <h3>Welcome, <span id="user-welcome"></span></h3>
+    </div>
+
+    <!-- Account Creation -->
+    <div>
+      <h3>Create Bank Account</h3>
+      <form id="form-create-account">
+        <label for="account-type">Account Type</label>
+        <select id="account-type" required>
+          <option value="" disabled selected>Select Type</option>
+          <option value="saving">Saving</option>
+          <option value="checking">Checking</option>
+          <option value="business">Business</option>
+        </select>
+        <button type="submit">Create Account</button>
+      </form>
+      <div id="account-status"></div>
+    </div>
+
+    <!-- Deposit Money -->
+    <div style="margin-top: 30px;">
+      <h3>Deposit Money</h3>
+      <form id="form-deposit">
+        <label for="deposit-account">Select Account</label>
+        <select id="deposit-account" required></select>
+        <label for="deposit-amount">Amount</label>
+        <input type="number" id="deposit-amount" min="1" step="0.01" required/>
+        <button type="submit">Deposit</button>
+      </form>
+      <div id="deposit-status"></div>
+    </div>
+
+    <!-- Withdraw Money -->
+    <div style="margin-top: 30px;">
+      <h3>Withdraw Money</h3>
+      <form id="form-withdraw">
+        <label for="withdraw-account">Select Account</label>
+        <select id="withdraw-account" required></select>
+        <label for="withdraw-amount">Amount</label>
+        <input type="number" id="withdraw-amount" min="1" step="0.01" required/>
+        <button type="submit">Withdraw</button>
+      </form>
+      <div id="withdraw-status"></div>
+    </div>
+
+    <!-- Transfer Funds -->
+    <div style="margin-top: 30px;">
+      <h3>Transfer Funds</h3>
+      <form id="form-transfer">
+        <label for="transfer-from">From Account</label>
+        <select id="transfer-from" required></select>
+        <label for="transfer-to">To Account</label>
+        <select id="transfer-to" required></select>
+        <label for="transfer-amount">Amount</label>
+        <input type="number" id="transfer-amount" min="1" step="0.01" required/>
+        <button type="submit">Transfer</button>
+      </form>
+      <div id="transfer-status"></div>
+    </div>
+
+    <!-- Balance Inquiry -->
+    <div style="margin-top: 30px;">
+      <h3>Account Balances</h3>
+      <ul id="balance-list"></ul>
+    </div>
+
+    <!-- Bank Statement -->
+    <div style="margin-top: 30px;">
+      <h3>Bank Statement</h3>
+      <label for="statement-account">Select Account</label>
+      <select id="statement-account" required></select>
+      <label for="from-date">From Date</label>
+      <input type="date" id="from-date" />
+      <label for="to-date">To Date</label>
+      <input type="date" id="to-date" />
+      <button id="filter-statement">Filter</button>
+      <button id="download-statement">Download Statement</button>
+
+      <table class="transactions-table" id="transactions-table">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Balance After</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Transactions rows appear here -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script>
+/* Data storage simulation */
+const users = [];
+let currentUser = null;
+
+// Utility function to get current timestamp string
+function getTimestamp() {
+  return new Date().toLocaleString();
+}
+
+// User registration
+document.getElementById('form-register').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const username = document.getElementById('reg-username').value.trim();
+  const password = document.getElementById('reg-password').value.trim();
+
+  if (users.find(u => u.username === username)) {
+    alert('Username already exists.');
+    return;
+  }
+
+  users.push({ username, password, accounts: [] });
+  alert('Registration successful. Please login.');
+  this.reset();
+});
+
+// User login
+document.getElementById('form-login').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const username = document.getElementById('login-username').value.trim();
+  const password = document.getElementById('login-password').value.trim();
+
+  const user = users.find(u => u.username === username && u.password === password);
+  if (!user) {
+    document.getElementById('login-error').textContent = 'Invalid username or password';
+    return;
+  }
+
+  currentUser = user;
+  document.getElementById('login-error').textContent = '';
+  document.getElementById('auth-section').classList.add('hidden');
+  document.getElementById('banking-section').classList.remove('hidden');
+  document.getElementById('user-welcome').textContent = currentUser.username;
+  updateAccountSelectors();
+  updateBalances();
+});
+
+// Logout
+document.getElementById('logout-button').addEventListener('click', function() {
+  currentUser = null;
+  document.getElementById('auth-section').classList.remove('hidden');
+  document.getElementById('banking-section').classList.add('hidden');
+  clearAllStatus();
+});
+
+// Create new account
+document.getElementById('form-create-account').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const accountType = document.getElementById('account-type').value;
+  if (!accountType) return;
+
+  // Generate account number
+  const accountNumber = 'AC' + Math.floor(Math.random() * 1000000);
+
+  // Create account object
+  const newAccount = {
+    number: accountNumber,
+    type: accountType,
+    balance: 0,
+    transactions: []
+  };
+
+  currentUser.accounts.push(newAccount);
+  document.getElementById('account-status').textContent = `Account created: ${accountNumber} (${accountType})`;
+  updateAccountSelectors();
+  updateBalances();
+  this.reset();
+});
+
+// Update selectors with user's accounts
+function updateAccountSelectors() {
+  ['deposit-account', 'withdraw-account', 'transfer-from', 'transfer-to', 'statement-account'].forEach(id => {
+    const select = document.getElementById(id);
+    select.innerHTML = '';
+    currentUser.accounts.forEach(acc => {
+      const option = document.createElement('option');
+      option.value = acc.number;
+      option.textContent = `${acc.number} (${acc.type})`;
+      select.appendChild(option);
+    });
+  });
+}
+
+// Deposit money
+document.getElementById('form-deposit').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const accNum = document.getElementById('deposit-account').value;
+  const amount = parseFloat(document.getElementById('deposit-amount').value);
+  if (amount <= 0) return;
+
+  const account = currentUser.accounts.find(a => a.number === accNum);
+  account.balance += amount;
+  account.transactions.push({
+    timestamp: getTimestamp(),
+    type: 'Deposit',
+    amount: amount,
+    balanceAfter: account.balance
+  });
+
+  document.getElementById('deposit-status').textContent = `Deposited ₹${amount.toFixed(2)} successfully.`;
+  updateBalances();
+  this.reset();
+});
+
+// Withdraw money
+document.getElementById('form-withdraw').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const accNum = document.getElementById('withdraw-account').value;
+  const amount = parseFloat(document.getElementById('withdraw-amount').value);
+  if (amount <= 0) return;
+
+  const account = currentUser.accounts.find(a => a.number === accNum);
+  if (amount > account.balance) {
+    document.getElementById('withdraw-status').textContent = "Insufficient balance.";
+    return;
+  }
+
+  account.balance -= amount;
+  account.transactions.push({
+    timestamp: getTimestamp(),
+    type: 'Withdrawal',
+    amount: amount,
+    balanceAfter: account.balance
+  });
+
+  document.getElementById('withdraw-status').textContent = `Withdrawn ₹${amount.toFixed(2)} successfully.`;
+  updateBalances();
+  this.reset();
+});
+
+// Transfer funds
+document.getElementById('form-transfer').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const fromAccNum = document.getElementById('transfer-from').value;
+  const toAccNum = document.getElementById('transfer-to').value;
+  const amount = parseFloat(document.getElementById('transfer-amount').value);
+
+  if (amount <= 0) return;
+  if (fromAccNum === toAccNum) {
+    document.getElementById('transfer-status').textContent = "Cannot transfer to the same account.";
+    return;
+  }
+
+  const fromAccount = currentUser.accounts.find(a => a.number === fromAccNum);
+  let toAccount = null;
+
+  // Find toAccount whether it's currentUser or another user
+  for (const user of users) {
+    const acc = user.accounts.find(a => a.number === toAccNum);
+    if (acc) {
+      toAccount = acc;
+      break;
+    }
+  }
+
+  if (!toAccount) {
+    document.getElementById('transfer-status').textContent = "Destination account not found.";
+    return;
+  }
+
+  if (amount > fromAccount.balance) {
+    document.getElementById('transfer-status').textContent = "Insufficient balance in source account.";
+    return;
+  }
+
+  fromAccount.balance -= amount;
+  fromAccount.transactions.push({
+    timestamp: getTimestamp(),
+    type: `Transfer to ${toAccNum}`,
+    amount: amount,
+    balanceAfter: fromAccount.balance
+  });
+
+  toAccount.balance += amount;
+  toAccount.transactions.push({
+    timestamp: getTimestamp(),
+    type: `Transfer from ${fromAccNum}`,
+    amount: amount,
+    balanceAfter: toAccount.balance
+  });
+
+  document.getElementById('transfer-status').textContent = `Transferred ₹${amount.toFixed(2)} successfully.`;
+  updateBalances();
+  this.reset();
+});
+
+// Update balances display
+function updateBalances() {
+  const balanceList = document.getElementById('balance-list');
+  balanceList.innerHTML = '';
+  currentUser.accounts.forEach(acc => {
+    const li = document.createElement('li');
+    li.textContent = `${acc.number} (${acc.type}): ₹${acc.balance.toFixed(2)}`;
+    balanceList.appendChild(li);
+  });
+}
+
+// Filter and display transactions in bank statement
+document.getElementById('filter-statement').addEventListener('click', function() {
+  const accNum = document.getElementById('statement-account').value;
+  const fromDate = document.getElementById('from-date').value;
+  const toDate = document.getElementById('to-date').value;
+
+  const account = currentUser.accounts.find(a => a.number === accNum);
+  if (!account) return;
+
+  let filteredTx = account.transactions;
+
+  if (fromDate) {
+    filteredTx = filteredTx.filter(t => new Date(t.timestamp) >= new Date(fromDate));
+  }
+  if (toDate) {
+    filteredTx = filteredTx.filter(t => new Date(t.timestamp) <= new Date(toDate + "T23:59:59"));
+  }
+
+  displayTransactions(filteredTx);
+});
+
+// Display transaction rows in table
+function displayTransactions(transactions) {
+  const tbody = document.querySelector('#transactions-table tbody');
+  tbody.innerHTML = '';
+  transactions.forEach(tx => {
+    const tr = document.createElement('tr');
+    ['timestamp', 'type', 'amount', 'balanceAfter'].forEach(key => {
+      const td = document.createElement('td');
+      if(key === 'amount' || key === 'balanceAfter') {
+        td.textContent = `₹${tx[key].toFixed(2)}`;
+      } else {
+        td.textContent = tx[key];
+      }
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+}
+
+// Download statement as CSV
+document.getElementById('download-statement').addEventListener('click', function() {
+  const accNum = document.getElementById('statement-account').value;
+  const account = currentUser.accounts.find(a => a.number === accNum);
+  if (!account) return;
+
+  let csvContent = "data:text/csv;charset=utf-8,";
+  csvContent += "Timestamp,Type,Amount,Balance After\n";
+
+  account.transactions.forEach(tx => {
+    csvContent += `"${tx.timestamp}","${tx.type}",${tx.amount.toFixed(2)},${tx.balanceAfter.toFixed(2)}\n`;
+  });
+
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", `statement_${accNum}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+
+// Clear statuses on logout
+function clearAllStatus() {
+  ['account-status', 'deposit-status', 'withdraw-status', 'transfer-status', 'login-error'].forEach(id => {
+    document.getElementById(id).textContent = '';
+  });
+  document.getElementById('balance-list').innerHTML = '';
+  document.querySelector('#transactions-table tbody').innerHTML = '';
+}
+
+</script>
+
+</body>
+</html>
